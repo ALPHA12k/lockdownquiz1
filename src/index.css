@@ -1,0 +1,77 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 195 100% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 196 100% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196 75% 95%;
+    --secondary-foreground: 196 100% 20%;
+
+    --muted: 196 50% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 196 70% 90%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 196 100% 47%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased min-h-screen;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .quiz-card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden border border-quiz-softBlue p-5 card-hover;
+  }
+  
+  .btn-primary {
+    @apply bg-quiz-blue text-white hover:bg-quiz-lightBlue transition-colors;
+  }
+  
+  .input-code {
+    @apply text-center text-2xl tracking-widest uppercase font-bold;
+  }
+  
+  .quiz-container {
+    @apply max-w-4xl mx-auto p-6;
+  }
+  
+  .page-title {
+    @apply text-3xl font-bold text-quiz-blue mb-6;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-md border border-quiz-softBlue/50;
+  }
+}
